@@ -33,12 +33,17 @@ function playSound(buttonColour) {
 
 // Creating an Event Listener for the event "click" on any of the buttons:
 $(".btn").click(function() {
-  var userChosenColour = this.id;
+  selectColour(this.id);
+})
+
+// Defining the selectColour function:
+function selectColour(userChosenColour) {
   userClickedPattern.push(userChosenColour);
   animatePress(userChosenColour); // Animated the clicked Button
   playSound(userChosenColour); //Played sound corresponding to the clicked Button
-  checkAnswer(level); // checks whether the userClickedPattern matches the gamePattern.
-})
+  checkAnswer(level); // checks if the userClickedPattern matches the gamePattern
+}
+
 
 // Defining the animatePress function to animate the clicked button:
 function animatePress(buttonColour) {
@@ -48,10 +53,39 @@ function animatePress(buttonColour) {
   }, 100);
 }
 
-// Creating an Event Listener against any "keydown" event to Start the Game:
-$(document).keydown(function() {
+// Creating an Event Listener against a click on "Start Playing" button to Start the Game:
+$(".start-button").click(function(){
   if (gamePattern.length === 0) { //making sure that the game has not started yet
     nextSequence();
+    $(".start-button").fadeOut();
+  }
+})
+
+// Creating an Event Listener against any "keydown" event to Start the Game:
+$(document).keydown(function(event) {
+  if (gamePattern.length === 0) { //making sure that the game has not started yet
+    nextSequence();
+    $(".start-button").fadeOut();
+  } else {
+    switch (event.key) {
+      case "r":
+        selectColour("green");
+        break;
+
+      case "t":
+        selectColour("red");
+        break;
+
+      case "f":
+        selectColour("yellow");
+        break;
+
+      case "g":
+        selectColour("blue");
+        break;
+
+      default: console.log(event.key);
+    }
   }
 })
 
@@ -66,13 +100,16 @@ function checkAnswer(currentLevel) {
 }
 
 // Defining the gameOver function:
-function gameOver(){
+function gameOver() {
   playSound("wrong");
   $("#level-title").text("Game Over, Press Any Key to Restart.");
   $("body").addClass("game-over");
   setTimeout(function() {
     $("body").removeClass("game-over")
   }, 400);
+  $(".start-button").addClass("restart");
+  $(".start-button").text("Restart Again");
+  $(".start-button").fadeIn();
   gamePattern = [];
   level = 0;
 }

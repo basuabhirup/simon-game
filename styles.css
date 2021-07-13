@@ -28,9 +28,42 @@ a:hover {
 
 .container {
   display: block;
-  width: 75%;
+  width: 90%;
   margin: auto;
+  text-align: center;
+  font-family: monospace;
+  font-size: 2rem;
+  color: #222;
+  font-weight: 900;
+  line-height: 2.5;
+}
 
+.start-button {
+  padding: 1.25rem;
+  background-color: #bb2299;
+  border-radius: 40px;
+  color: #6f6;
+  text-shadow: 1px 1px #666;
+  font-family: serif;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  border: none;
+}
+
+.start-button:hover {
+  background-color: #de45bc;
+  text-shadow: 1px 1px #000;
+  cursor: pointer;
+}
+
+.restart {
+  background-color: #a00;
+  color: #fff;
+}
+
+.restart:hover {
+  background-color: #f00;
 }
 
 .btn {
