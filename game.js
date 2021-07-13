@@ -67,7 +67,7 @@ $(document).keydown(function(event) {
     nextSequence();
     $(".start-button").fadeOut();
   } else {
-    switch (event.key) {
+    switch (event.key.toLowerCase()) {
       case "r":
         selectColour("green");
         break;
