@@ -108,7 +108,7 @@ function gameOver() {
     $("body").removeClass("game-over")
   }, 400);
   $(".start-button").addClass("restart");
-  $(".start-button").text("Restart Again");
+  $(".start-button").text("Restart Playing");
   $(".start-button").fadeIn();
   gamePattern = [];
   level = 0;

@@ -1,6 +1,7 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  font-family: 'Press Start 2P', cursive;
 }
 
 footer {
@@ -20,7 +21,6 @@ a:hover {
 }
 
 #level-title {
-  font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
   color: #FEF2BF;
@@ -31,7 +31,6 @@ a:hover {
   width: 90%;
   margin: auto;
   text-align: center;
-  font-family: monospace;
   font-size: 2rem;
   color: #222;
   font-weight: 900;
@@ -40,11 +39,10 @@ a:hover {
 
 .start-button {
   padding: 1.25rem;
-  background-color: #bb2299;
+  background-color: #080;
   border-radius: 40px;
-  color: #6f6;
+  color: #fff;
   text-shadow: 1px 1px #666;
-  font-family: serif;
   font-weight: bolder;
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
@@ -52,7 +50,7 @@ a:hover {
 }
 
 .start-button:hover {
-  background-color: #de45bc;
+  background-color: #0b0;
   text-shadow: 1px 1px #000;
   cursor: pointer;
 }
@@ -63,7 +61,7 @@ a:hover {
 }
 
 .restart:hover {
-  background-color: #f00;
+  background-color: #d00;
 }
 
 .btn {
