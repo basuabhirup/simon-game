@@ -3,6 +3,22 @@ body {
   background-color: #011F3F;
 }
 
+footer {
+  margin-top: 4rem;
+  font-family: sans-serif;
+  color: #ccc;
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+}
+
+a:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
