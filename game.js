@@ -33,7 +33,9 @@ function playSound(buttonColour) {
 
 // Creating an Event Listener for the event "click" on any of the buttons:
 $(".btn").click(function() {
-  selectColour(this.id);
+  if (userClickedPattern.length < gamePattern.length) {
+    selectColour(this.id);
+  }
 })
 
 // Defining the selectColour function:
@@ -92,10 +94,12 @@ $(document).keydown(function(event) {
 // Defining checkAnswer function to check whether the clicked buttons match the game pattern:
 function checkAnswer(currentLevel) {
   var index = userClickedPattern.length - 1;
-  if (userClickedPattern[index] !== gamePattern[index]) {
+  if (userClickedPattern[index] === gamePattern[index]) {
+    if (index === currentLevel - 1) {
+      setTimeout(nextSequence, 1000);
+    }
+  } else {
     gameOver();
-  } else if (index === currentLevel - 1) {
-    setTimeout(nextSequence, 1000);
   }
 }
 
