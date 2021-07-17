@@ -68,7 +68,7 @@ $(document).keydown(function(event) {
   if (gamePattern.length === 0) { //making sure that the game has not started yet
     nextSequence();
     $(".start-button").fadeOut();
-  } else {
+  } else if (userClickedPattern.length < gamePattern.length) {
     switch (event.key.toLowerCase()) {
       case "r":
         selectColour("green");
